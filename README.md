@@ -67,9 +67,13 @@ Before creating a new issue, be sure to try the Troubleshooting and to check if 
 This code is an Arduino sketch that uses the ESP32C3 microcontroller to perform the following tasks:
 
 Connect to a WiFi network using the connect_wifi() function.
+
 Scan for available WiFi networks and print the results to the serial monitor using the wifi_scan() function.
+
 Connect to an MQTT server using the send_mqtt() function and publish the results of the WiFi scan to a topic.
+
 Repeat the above steps every 5 seconds using the loop() function.
+
 The sketch starts by including the necessary libraries WiFi.h and PubSubClient.h. It also defines the pin number for the built-in LED (LED_BUILTIN) and the size of the message buffer (MSG_BUFFER_SIZE).
 
 Next, it defines the WiFi network credentials (ssid and password) and the MQTT broker's IP address (mqtt_server).
