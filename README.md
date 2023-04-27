@@ -62,3 +62,26 @@ Before creating a new issue, be sure to try the Troubleshooting and to check if 
 * ESP32-S2 Datasheet: [Link to datasheet](https://www.espressif.com/sites/default/files/documentation/esp32-s2_datasheet_en.pdf)
 * ESP32-C3 Datasheet: [Link to datasheet](https://www.espressif.com/sites/default/files/documentation/esp32-c3_datasheet_en.pdf)
 * Official ESP-IDF documentation: [ESP-IDF](https://idf.espressif.com)
+
+
+This code is an Arduino sketch that uses the ESP32C3 microcontroller to perform the following tasks:
+
+Connect to a WiFi network using the connect_wifi() function.
+Scan for available WiFi networks and print the results to the serial monitor using the wifi_scan() function.
+Connect to an MQTT server using the send_mqtt() function and publish the results of the WiFi scan to a topic.
+Repeat the above steps every 5 seconds using the loop() function.
+The sketch starts by including the necessary libraries WiFi.h and PubSubClient.h. It also defines the pin number for the built-in LED (LED_BUILTIN) and the size of the message buffer (MSG_BUFFER_SIZE).
+
+Next, it defines the WiFi network credentials (ssid and password) and the MQTT broker's IP address (mqtt_server).
+
+The setup() function initializes the serial communication and sets up the WiFi in station mode.
+
+The loop() function calls the wifi_scan() function to scan for available WiFi networks, then calls the connect_wifi() function to connect to the configured WiFi network. After that, it calls the send_mqtt() function to publish the results of the WiFi scan to an MQTT topic.
+
+The wifi_scan() function scans for available WiFi networks and prints the results to the serial monitor. The send_serial() function is used to format and print the WiFi scan results to the serial monitor.
+
+The connect_wifi() function connects to the configured WiFi network.
+
+The send_mqtt() function connects to the MQTT broker and publishes the results of the WiFi scan to an MQTT topic. If the connection is not successful, it retries after a delay.
+
+Finally, the sketch includes some comments that provide further information about the purpose of each function and variable.
