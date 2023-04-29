@@ -11,12 +11,9 @@ WiFiClient espClient;
 PubSubClient client(espClient);
 unsigned long lastMsg = 0;
 #define MSG_BUFFER_SIZE	(50)
-char msg[MSG_BUFFER_SIZE];
-//uint8_t value = 0;
 uint8_t n = 0;
 
 // Wifi
-WiFiClass wifi;
 const char* ssid = "your_ssid";
 const char* password = "your_password";
 // MQTT
